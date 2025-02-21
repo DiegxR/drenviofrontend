@@ -4,10 +4,11 @@
 Este proyecto es el frontend de la prueba tecnica, desarrollado con React y TypeScript. Utiliza **TailwindCSS** para el diseño de la interfaz y **React Router Dom** para el manejo de rutas. Además, está organizado en módulos para una mejor escalabilidad y mantenimiento.
 
 ## Instalación 
-1. Instalar dependencias con `npm install`
-2. Crear un archivo .env y añadir la siguiente variable de entorno `REACT_APP_API_URL="http://localhost:5000"`
-3. Correr el proyecto con el comando `npm run start`
-4. Para iniciar sesión puede usar el correo `admin@email.com` ahí verá todos los demás usuarios, pulsando click derecho podrá copiar el correo para loguearse posteriormente
+1. Clonar el repositorio con `git clone https://github.com/DiegxR/drenviofrontend.git`
+2. Instalar dependencias con `npm install`
+3. Crear un archivo .env y añadir la siguiente variable de entorno `REACT_APP_API_URL="http://localhost:5000"`
+4. Correr el proyecto con el comando `npm run start`
+5. Para iniciar sesión puede usar el correo `admin@email.com` ahí verá todos los demás usuarios, pulsando click derecho podrá copiar el correo para loguearse posteriormente
 
 ## Justificación de Elecciones Técnicas
 
