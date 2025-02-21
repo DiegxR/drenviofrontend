@@ -6,9 +6,8 @@ import { CardProduct } from "./components/CardProduct";
 import useLogout from "../auth/hooks/useLogout";
 
 const Dashboard = () => {
-  const { user, setProducts, setSpecialPrices, products } =
-    userStore();
-  const {handleLogout} = useLogout()
+  const { user, setProducts, setSpecialPrices, products } = userStore();
+  const { handleLogout } = useLogout();
   useEffect(() => {
     getProducts().then((value) => {
       setProducts(value);
@@ -25,15 +24,15 @@ const Dashboard = () => {
       <section className="flex justify-between items-center p-4 px-8 shadow-lg bg-white w-screen">
         <div className="flex gap-4 items-center">
           <Image className="rounded-full" src={user?.picture?.thumbnail} />
-          <p>
-            {user?.name.title} {user?.name.first}
-          </p>
+
+          <div className="flex flex-col ">
+            <p>
+              {user?.name.title} {user?.name.first}
+            </p>
+            <p className="text-sm text-gray-400">{user?.email}</p>
+          </div>
         </div>
-        <Button
-          onPress={handleLogout}
-          color="danger"
-          className="text-white"
-        >
+        <Button onPress={handleLogout} color="danger" className="text-white">
           <p>Cerrar Sesión</p>
           <i
             className="icon-[radix-icons--exit] rotate-180"

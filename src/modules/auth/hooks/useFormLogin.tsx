@@ -24,12 +24,13 @@ const useFormLogin = () => {
         try {
           const {data} = await getUserByEmail(e.email);
           setUser(data);
+          console.log(data)
           toast("¡Bienvenid@!", {
             position: "bottom-right",
             style: { color: "green" },
           });
           setLoading(false)
-          if(data.email === admin){
+          if(data?.email === admin){
             navigate("/Admin")
           }else{
             navigate("/Dashboard")

@@ -1,6 +1,7 @@
 import axios from "axios";
 import { apiUrl } from "../constants/env";
 export const getUserByEmail = async (email: string) => {
+  console.log(apiUrl)
   try {
     const { data } = await axios.get(`${apiUrl}/api/users/${email}`);
     console.log(data);

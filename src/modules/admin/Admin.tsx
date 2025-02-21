@@ -8,15 +8,15 @@ import { getProducts } from "../../services/ProductService";
 import UserProfile from "./components/UserProfile";
 import SpecialsPrices from "./components/SpecialsPrices";
 import useLogout from "../auth/hooks/useLogout";
-
+import logo from "../../assets/drenvio.svg";
 const Admin = () => {
   const { user } = userStore();
   const { setUsers, users, setProducts } = adminStore();
-  const {handleLogout} = useLogout()
-  
+  const { handleLogout } = useLogout();
+
   //Carga la información de usuarios y productos
   useEffect(() => {
-    if(user){
+    if (user) {
       getUsers().then((value) => {
         const users = value.data.filter(
           (value: User) => value.email !== user!.email
@@ -34,11 +34,19 @@ const Admin = () => {
       <section className="flex justify-between items-center p-4 px-8 shadow-lg bg-white w-screen">
         <div className="flex gap-4 items-center">
           <Image className="rounded-full" src={user?.picture?.thumbnail} />
-          <p>Admin</p>
+          <div className="flex flex-col ">
+            <p>Admin</p>
+            <p className="text-sm text-gray-400">{user?.email}</p>
+          </div>
         </div>
+        <Image alt="drenvíoLogo" className="w-full h-10" src={logo} />
         <Button onPress={handleLogout} color="danger" className="text-white">
           <p>Cerrar Sesión</p>
-        <i className="icon-[radix-icons--exit] rotate-180" role="img" aria-hidden="true" />
+          <i
+            className="icon-[radix-icons--exit] rotate-180"
+            role="img"
+            aria-hidden="true"
+          />
         </Button>
       </section>
       <h3 className="mt-16 text-2xl w-full text-center font-medium">
@@ -54,7 +62,10 @@ const Admin = () => {
                   aria-label="Accordion 1"
                   title={<UserProfile item={item} />}
                 >
-                    <SpecialsPrices user={item} collectionName={item.collectionName} />
+                  <SpecialsPrices
+                    user={item}
+                    collectionName={item.collectionName}
+                  />
                 </AccordionItem>
               ))}
             </Accordion>

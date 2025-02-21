@@ -1,15 +1,16 @@
-import { Button, Input } from "@heroui/react";
+import { Button, Image, Input } from "@heroui/react";
 import useFormLogin from "../hooks/useFormLogin";
-
+import logo from "../../../assets/drenvio.svg"
 const LoginForm = () => {
 
   const {errors, handleSubmit, onSubmit, register} = useFormLogin()
-  
+
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
       className="flex h-full flex-col items-center justify-center gap-[10%] "
     >
+      <Image alt="drenvíoLogo" className="w-full h-14" src={logo} />
       <h3 className="font-bold mb-8 text-center text-3xl ">Iniciar Sesión</h3>
       <div className="flex flex-col gap-[16px] w-[70%] mx-auto">
         <p className="text-center mx-auto text-sm border-1 border-slate rounded-[12px] p-2 px-4">
