@@ -6,7 +6,7 @@ Este proyecto es el frontend de la prueba tecnica, desarrollado con React y Type
 ## Instalación 
 1. Clonar el repositorio con `git clone https://github.com/DiegxR/drenviofrontend.git`
 2. Instalar dependencias con `npm install`
-3. Crear un archivo .env y añadir la siguiente variable de entorno `REACT_APP_API_URL="http://localhost:5000"`
+3. Crear un archivo .env y añadir la siguiente variable de entorno `REACT_APP_API_URL="http://drenviobackend-git-main-diegxrs-projects.vercel.app"`
 4. Correr el proyecto con el comando `npm run start`
 5. Para iniciar sesión puede usar el correo `admin@email.com` ahí verá todos los demás usuarios, pulsando click derecho podrá copiar el correo para loguearse posteriormente
 
